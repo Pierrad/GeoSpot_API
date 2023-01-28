@@ -1,0 +1,459 @@
+_type: export
+__export_format: 4
+__export_date: 2023-01-28T17:07:17.582Z
+__export_source: insomnia.desktop.app:v2022.7.5
+resources:
+  - _id: req_618b0adce4734d5cb77cc4462219499f
+    parentId: fld_5d3395aff2054e19a54823d8274af641
+    modified: 1674924309859
+    created: 1674923586651
+    url: "{{ _.url }}/user/created"
+    name: GetCreatedPlaces
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - id: pair_76db59d786dd4893958af94434f36f8d
+        name: Authorization
+        value: Bearer 2|3GyjPMCKqjgr0mBOqbHrwCexSKx1hWpwL4uBZZSz
+        description: ""
+    authentication: {}
+    metaSortKey: -1674923586651
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_5d3395aff2054e19a54823d8274af641
+    parentId: wrk_7197747b9a97497d9eb45d4f70b06a97
+    modified: 1674922732150
+    created: 1674922732150
+    name: User
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1674922732150
+    _type: request_group
+  - _id: wrk_7197747b9a97497d9eb45d4f70b06a97
+    parentId: null
+    modified: 1674918869757
+    created: 1674918869757
+    name: GeoSpot
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_e9341fe0245846d69e955eb485b02dda
+    parentId: fld_5d3395aff2054e19a54823d8274af641
+    modified: 1674924313694
+    created: 1674923128460
+    url: "{{ _.url }}/user/discovered"
+    name: GetDiscoveredPlaces
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - id: pair_71adf5371d914c25976214cb77d66337
+        name: Authorization
+        value: Bearer 2|3GyjPMCKqjgr0mBOqbHrwCexSKx1hWpwL4uBZZSz
+        description: ""
+    authentication: {}
+    metaSortKey: -1674923128460
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_67df83de410b4ed5bb33895745df1a20
+    parentId: fld_7f4117b10deb416c91c7dfd129517bc6
+    modified: 1674924997494
+    created: 1674921835177
+    url: "{{ _.url }}/place"
+    name: CreatePlace
+    description: ""
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_8127e264fdd3435fa2f563df1af5216b
+          name: name
+          value: Test
+          description: ""
+        - id: pair_f10bbcf9042f4b5c881e01b9cd365b26
+          name: geolocation
+          value: '{ "latitude": 43.6961, "longitude": 7.27178 }'
+          description: ""
+        - id: pair_0cf58f1059644c78a820120d01bff411
+          name: image
+          value: ""
+          description: ""
+          type: file
+          fileName: /Users/pavasseur/Downloads/BBS/bbs.png
+    parameters: []
+    headers:
+      - id: pair_44395ae2116640cfbd66a0d49fa813be
+        name: Authorization
+        value: Bearer 1|d3zBhHyJ9zZQmVudqF7PGuvTitqzNwmpAlDEwCGp
+        description: ""
+      - name: Content-Type
+        value: multipart/form-data
+        id: pair_afe0ff2ea7204190b6a9c1ec2778a3e9
+    authentication: {}
+    metaSortKey: -1674921993711
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_7f4117b10deb416c91c7dfd129517bc6
+    parentId: wrk_7197747b9a97497d9eb45d4f70b06a97
+    modified: 1674921850599
+    created: 1674921817945
+    name: Place
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1674921817945
+    _type: request_group
+  - _id: req_3ffd3418b4c6408a804897d198209eee
+    parentId: fld_7f4117b10deb416c91c7dfd129517bc6
+    modified: 1674922064017
+    created: 1674921993761
+    url: "{{ _.url }}/place/1"
+    name: UpdatePlace
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Test2"
+        }
+    parameters: []
+    headers:
+      - id: pair_4eba20f021b34a7eaa8e6784f1aa80e5
+        name: Authorization
+        value: Bearer 3|tLDdnj7O8QedwKIuz2xLsdVeapMoXSFqfkWyhdqY
+        description: ""
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1674921993661
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_54b161b85e08450aad227f86486b3eb4
+    parentId: fld_7f4117b10deb416c91c7dfd129517bc6
+    modified: 1674922140604
+    created: 1674922106978
+    url: "{{ _.url }}/place/1"
+    name: DeletePlace
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers:
+      - id: pair_f4a72b59af594f6a927352fdda6a983e
+        name: Authorization
+        value: Bearer 3|tLDdnj7O8QedwKIuz2xLsdVeapMoXSFqfkWyhdqY
+        description: ""
+    authentication: {}
+    metaSortKey: -1674921993611
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_5f1541473b024ff698e7496f726d7f0d
+    parentId: fld_7f4117b10deb416c91c7dfd129517bc6
+    modified: 1674922186753
+    created: 1674922147795
+    url: "{{ _.url }}/place/1"
+    name: GetPlace
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - id: pair_15adfd0d94604f6e88e2dd91296a7e29
+        name: Authorization
+        value: Bearer 3|tLDdnj7O8QedwKIuz2xLsdVeapMoXSFqfkWyhdqY
+        description: ""
+    authentication: {}
+    metaSortKey: -1674921993561
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_41b54559f72a41d69850c6ab38c7a97c
+    parentId: fld_7f4117b10deb416c91c7dfd129517bc6
+    modified: 1674922719230
+    created: 1674922189631
+    url: "{{ _.url }}/place/around"
+    name: GetPlacesAround
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"geolocation": "{ \"latitude\": 43.6961, \"longitude\": 7.27178 }",
+        	"radius": "20"
+        }
+    parameters: []
+    headers:
+      - id: pair_432ea85e7deb4e148b71054949283bc1
+        name: Authorization
+        value: Bearer 3|tLDdnj7O8QedwKIuz2xLsdVeapMoXSFqfkWyhdqY
+        description: ""
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1674921993511
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_8ad8af9b27f24350bf0bf1e6706a51dc
+    parentId: fld_7f4117b10deb416c91c7dfd129517bc6
+    modified: 1674924293394
+    created: 1674922985525
+    url: "{{ _.url }}/place/discovered"
+    name: AddDiscoveredPlace
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"id_place": 1
+        }
+    parameters: []
+    headers:
+      - id: pair_da78aaa4cbc34e1ebb9d54e5e654ec33
+        name: Authorization
+        value: Bearer 2|3GyjPMCKqjgr0mBOqbHrwCexSKx1hWpwL4uBZZSz
+        description: ""
+      - name: Content-Type
+        value: application/json
+        id: pair_a525455c4fdf4ca2969f9a017ff2203c
+    authentication: {}
+    metaSortKey: -1674921993461
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_88513415f7a348e39e1008533fd3a97d
+    parentId: fld_e9e2bc756c5f4fddae4675c2308c8d93
+    modified: 1674919487385
+    created: 1674918911644
+    url: "{{ _.url }}/register"
+    name: Register
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"pseudo": "Pierrad",
+        	"email": "test@test.com",
+        	"password": "Azerty12"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1674919355899
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_e9e2bc756c5f4fddae4675c2308c8d93
+    parentId: wrk_7197747b9a97497d9eb45d4f70b06a97
+    modified: 1674918910570
+    created: 1674918910570
+    name: Auth
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1674918910570
+    _type: request_group
+  - _id: req_dfd636ff4d9a4acfa0a9632d95a13846
+    parentId: fld_e9e2bc756c5f4fddae4675c2308c8d93
+    modified: 1674919357224
+    created: 1674919305496
+    url: "{{ _.url }}/login"
+    name: Login
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email": "test@test.com",
+        	"password": "Azerty12"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1674919305496
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_6d196f7244e14f749046a757473d8c09
+    parentId: fld_e9e2bc756c5f4fddae4675c2308c8d93
+    modified: 1674921693494
+    created: 1674919406302
+    url: "{{ _.url }}/me"
+    name: Me
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - id: pair_00724ee5ca0c45bb947ce9a707bd6e38
+        name: Authorization
+        value: Bearer 2|8sMHeSCgLIzjI4lx8evFHDflfqgPiaC1bcn2wQx9
+        description: ""
+    authentication: {}
+    metaSortKey: -1674919305446
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_cab4db3748714030873aed1e96900d85
+    parentId: fld_e9e2bc756c5f4fddae4675c2308c8d93
+    modified: 1674921799766
+    created: 1674921726386
+    url: "{{ _.url }}/logout"
+    name: Logout
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - id: pair_87fe46a43d78431fb8c23fa1add5007d
+        name: Authorization
+        value: Bearer 2|8sMHeSCgLIzjI4lx8evFHDflfqgPiaC1bcn2wQx9
+        description: ""
+    authentication: {}
+    metaSortKey: -1674919305396
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_cde3758f7dead6c44427f339f915646ff13852f5
+    parentId: wrk_7197747b9a97497d9eb45d4f70b06a97
+    modified: 1674918869759
+    created: 1674918869759
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1674918869759
+    _type: environment
+  - _id: jar_cde3758f7dead6c44427f339f915646ff13852f5
+    parentId: wrk_7197747b9a97497d9eb45d4f70b06a97
+    modified: 1674922238652
+    created: 1674918869760
+    name: Default Jar
+    cookies:
+      - key: XSRF-TOKEN
+        value: eyJpdiI6IldQaEVVcEduUVgrdVFhcDBtNm1pZFE9PSIsInZhbHVlIjoiMTJiSlo0TEhPNStQRWJObGdLN05nNVoveU56WUpvUm15a0Q3U2JnQTF1bzQ5V0ZJTlg2cHA0ang2ZktueVZ0U2hadkdaOW41NW53RW5lc3BHcFl4RHNuZXpoQkRwQmJrcHZTS3dUS0NhZmdjNU5kVG5UVUxYSGN6NzliNjc2QUEiLCJtYWMiOiI3YjY0YzgwMzZlOGUxYzExMjViMTRhMjhkMjhjMzVjMDE0NGIxZWQxNDM4OGJkYTdhZjkyYjk0OTk2MjA4ODAzIiwidGFnIjoiIn0%3D
+        expires: 2023-01-28T18:10:38.000Z
+        maxAge: 7200
+        domain: localhost
+        path: /
+        extensions:
+          - samesite=lax
+        hostOnly: true
+        creation: 2023-01-28T15:15:36.100Z
+        lastAccessed: 2023-01-28T16:10:38.651Z
+        id: "8831805103685804"
+      - key: geospot_session
+        value: eyJpdiI6ImNCUzFZeHJxbkFJY2hKRUhVRjZVeEE9PSIsInZhbHVlIjoia1dHUExURXBya09MeSt5RWNEckdrSjBibXFiV3lUOTI0bE5mZDBWY1gxRVhMK3BNRnBMand6N3I3OVZBbDhNbGYxZ1h2VlRWRzB0MTRxR3FQQjJ2dFZSUVA5Sm04RFc5MVFmSy8rR1F6MEF0VmM2Zys4aUs4QzloYk1XQ0pkbzQiLCJtYWMiOiJmOTFjMzllNWM3NmQ1NGI3MTY2NjZlMDg3OTg5MDI4MmU5YTA4MmZmNzljNTMyYTU5OWJmN2Q4OTEzNjlmZDZiIiwidGFnIjoiIn0%3D
+        expires: 2023-01-28T18:10:38.000Z
+        maxAge: 7200
+        domain: localhost
+        path: /
+        httpOnly: true
+        extensions:
+          - samesite=lax
+        hostOnly: true
+        creation: 2023-01-28T15:15:36.100Z
+        lastAccessed: 2023-01-28T16:10:38.651Z
+        id: "1307992153494466"
+    _type: cookie_jar
+  - _id: spc_1aa9766ae8dd47049337185ecd5e313d
+    parentId: wrk_7197747b9a97497d9eb45d4f70b06a97
+    modified: 1674918869757
+    created: 1674918869757
+    fileName: GeoSpot
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_8f147f14daf04e57831c5715de741d15
+    parentId: env_cde3758f7dead6c44427f339f915646ff13852f5
+    modified: 1674925514023
+    created: 1674918876810
+    name: Local
+    data:
+      url: http://localhost:8080/api
+    dataPropertyOrder:
+      "&":
+        - url
+    color: null
+    isPrivate: false
+    metaSortKey: 1674918876810
+    _type: environment
