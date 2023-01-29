@@ -11,15 +11,11 @@ class PlaceController extends Controller
 
     public function create(Request $request): JsonResponse
     {
-        $validated = \Illuminate\Support\Facades\Validator::make($request->all(), [
+        $validated = $request->validate([
             'name' => 'required|string',
             'geolocation' => 'required|string',
             'image' => 'required|image',
         ]);
-
-        if ($validated->fails()) {
-            return response()->json(['status' => '400', 'message' => $validated->errors()], 400);
-        }
 
         $validated['image'] = $request->file('image')->store('public');
         $validated['geolocation'] = json_decode($validated['geolocation']);
