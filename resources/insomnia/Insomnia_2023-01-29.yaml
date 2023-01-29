@@ -1,6 +1,6 @@
 _type: export
 __export_format: 4
-__export_date: 2023-01-28T17:07:17.582Z
+__export_date: 2023-01-29T17:00:59.013Z
 __export_source: insomnia.desktop.app:v2022.7.5
 resources:
   - _id: req_618b0adce4734d5cb77cc4462219499f
@@ -73,7 +73,7 @@ resources:
     _type: request
   - _id: req_67df83de410b4ed5bb33895745df1a20
     parentId: fld_7f4117b10deb416c91c7dfd129517bc6
-    modified: 1674924997494
+    modified: 1674929548386
     created: 1674921835177
     url: "{{ _.url }}/place"
     name: CreatePlace
@@ -100,7 +100,7 @@ resources:
     headers:
       - id: pair_44395ae2116640cfbd66a0d49fa813be
         name: Authorization
-        value: Bearer 1|d3zBhHyJ9zZQmVudqF7PGuvTitqzNwmpAlDEwCGp
+        value: Bearer 1|pkLqnCmaM2MYZMr8fx71etteLfQXQGt6vIP3OxPS
         description: ""
       - name: Content-Type
         value: multipart/form-data
@@ -315,7 +315,7 @@ resources:
     _type: request_group
   - _id: req_dfd636ff4d9a4acfa0a9632d95a13846
     parentId: fld_e9e2bc756c5f4fddae4675c2308c8d93
-    modified: 1674919357224
+    modified: 1675010994924
     created: 1674919305496
     url: "{{ _.url }}/login"
     name: Login
@@ -344,7 +344,7 @@ resources:
     _type: request
   - _id: req_6d196f7244e14f749046a757473d8c09
     parentId: fld_e9e2bc756c5f4fddae4675c2308c8d93
-    modified: 1674921693494
+    modified: 1675011505574
     created: 1674919406302
     url: "{{ _.url }}/me"
     name: Me
@@ -356,6 +356,10 @@ resources:
       - id: pair_00724ee5ca0c45bb947ce9a707bd6e38
         name: Authorization
         value: Bearer 2|8sMHeSCgLIzjI4lx8evFHDflfqgPiaC1bcn2wQx9
+        description: ""
+      - id: pair_af2d669c1c624309be684f459b7996bb
+        name: Accept
+        value: application/json
         description: ""
     authentication: {}
     metaSortKey: -1674919305446
@@ -405,13 +409,13 @@ resources:
     _type: environment
   - _id: jar_cde3758f7dead6c44427f339f915646ff13852f5
     parentId: wrk_7197747b9a97497d9eb45d4f70b06a97
-    modified: 1674922238652
+    modified: 1675010543585
     created: 1674918869760
     name: Default Jar
     cookies:
       - key: XSRF-TOKEN
-        value: eyJpdiI6IldQaEVVcEduUVgrdVFhcDBtNm1pZFE9PSIsInZhbHVlIjoiMTJiSlo0TEhPNStQRWJObGdLN05nNVoveU56WUpvUm15a0Q3U2JnQTF1bzQ5V0ZJTlg2cHA0ang2ZktueVZ0U2hadkdaOW41NW53RW5lc3BHcFl4RHNuZXpoQkRwQmJrcHZTS3dUS0NhZmdjNU5kVG5UVUxYSGN6NzliNjc2QUEiLCJtYWMiOiI3YjY0YzgwMzZlOGUxYzExMjViMTRhMjhkMjhjMzVjMDE0NGIxZWQxNDM4OGJkYTdhZjkyYjk0OTk2MjA4ODAzIiwidGFnIjoiIn0%3D
-        expires: 2023-01-28T18:10:38.000Z
+        value: eyJpdiI6IkJCQmxVSmo1Yi9yc2NsdHBLSlFjWXc9PSIsInZhbHVlIjoiZ1BkZ0VkNFdaWjFSSjl6S3pSQTlFY1VaOFVTYy9raVNVTEp2VEtncGhqNVNSMCtQeS83SGpMRG5LaVBqT1hTcG9oTU5wQjBmYU5ZaDBpbThuZkkyREpRN290U1lyZWkzUzl0UDNJU3FualJzWWRybUdPdmMvZXRnT3BCWjNnM2QiLCJtYWMiOiI3NTI5ODBhNjJjYzVlYjE5YjZmMzgyNmJlN2YyNmI4MzllM2E4NTRlOTA3YzJjYjZhNTM1MTUwYTFmMWU2YWVmIiwidGFnIjoiIn0%3D
+        expires: 2023-01-29T18:42:23.000Z
         maxAge: 7200
         domain: localhost
         path: /
@@ -419,11 +423,11 @@ resources:
           - samesite=lax
         hostOnly: true
         creation: 2023-01-28T15:15:36.100Z
-        lastAccessed: 2023-01-28T16:10:38.651Z
-        id: "8831805103685804"
+        lastAccessed: 2023-01-29T16:42:23.585Z
+        id: "806693265589596"
       - key: geospot_session
-        value: eyJpdiI6ImNCUzFZeHJxbkFJY2hKRUhVRjZVeEE9PSIsInZhbHVlIjoia1dHUExURXBya09MeSt5RWNEckdrSjBibXFiV3lUOTI0bE5mZDBWY1gxRVhMK3BNRnBMand6N3I3OVZBbDhNbGYxZ1h2VlRWRzB0MTRxR3FQQjJ2dFZSUVA5Sm04RFc5MVFmSy8rR1F6MEF0VmM2Zys4aUs4QzloYk1XQ0pkbzQiLCJtYWMiOiJmOTFjMzllNWM3NmQ1NGI3MTY2NjZlMDg3OTg5MDI4MmU5YTA4MmZmNzljNTMyYTU5OWJmN2Q4OTEzNjlmZDZiIiwidGFnIjoiIn0%3D
-        expires: 2023-01-28T18:10:38.000Z
+        value: eyJpdiI6InRqNEh5Yk80VXBFM2hRN28yUDVHZUE9PSIsInZhbHVlIjoiTmE0TGZFT1FoRnYwanVjbzAvbEluSUhmR3pCYVh1eUlZQnpnYlA3QVNpTDlPU1VMTGk2eGE5dmkwS2laSGJVVHNGNnhWWmFzL1RERjdaWHBKcGJ5UHdlMWt1UWJEd2dGUGRVVmtMZUFZZzlOMTlST3V0bzFOcHF0T2ZDTkRGVjUiLCJtYWMiOiI5NDNjYmQ3ZjIyOTU0MDBmZWJkOTcxZDM2MjVlOThiOGM1Mjk2MDY1YzZlNmZjZTc1NjM4OGExY2EwOTQ4YTBkIiwidGFnIjoiIn0%3D
+        expires: 2023-01-29T18:42:23.000Z
         maxAge: 7200
         domain: localhost
         path: /
@@ -432,8 +436,8 @@ resources:
           - samesite=lax
         hostOnly: true
         creation: 2023-01-28T15:15:36.100Z
-        lastAccessed: 2023-01-28T16:10:38.651Z
-        id: "1307992153494466"
+        lastAccessed: 2023-01-29T16:42:23.585Z
+        id: "7746326601377609"
     _type: cookie_jar
   - _id: spc_1aa9766ae8dd47049337185ecd5e313d
     parentId: wrk_7197747b9a97497d9eb45d4f70b06a97
@@ -445,7 +449,7 @@ resources:
     _type: api_spec
   - _id: env_8f147f14daf04e57831c5715de741d15
     parentId: env_cde3758f7dead6c44427f339f915646ff13852f5
-    modified: 1674925514023
+    modified: 1675001528767
     created: 1674918876810
     name: Local
     data:
@@ -456,4 +460,18 @@ resources:
     color: null
     isPrivate: false
     metaSortKey: 1674918876810
+    _type: environment
+  - _id: env_bdbae9d49641420c993b10d67ab65171
+    parentId: env_cde3758f7dead6c44427f339f915646ff13852f5
+    modified: 1674929412169
+    created: 1674929392413
+    name: Prod
+    data:
+      url: http://217.160.51.173:8080/api
+    dataPropertyOrder:
+      "&":
+        - url
+    color: null
+    isPrivate: false
+    metaSortKey: 1674929392413
     _type: environment

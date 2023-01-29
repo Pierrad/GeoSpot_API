@@ -12,16 +12,20 @@ class AuthController extends Controller
 {
     public function register(Request $request): JsonResponse
     {
-        $validatedData = $request->validate([
+        $validated = \Illuminate\Support\Facades\Validator::make($request->all(), [
             'pseudo' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8',
         ]);
 
+        if ($validated->fails()) {
+            return response()->json(['status' => '400', 'message' => $validated->errors()], 400);
+        }
+
         $user = User::create([
-            'pseudo' => $validatedData['pseudo'],
-            'email' => $validatedData['email'],
-            'password' => Hash::make($validatedData['password']),
+            'pseudo' => $validated['pseudo'],
+            'email' => $validated['email'],
+            'password' => Hash::make($validated['password']),
         ]);
 
         $token = $user->createToken('auth_token')->plainTextToken;
@@ -36,6 +40,7 @@ class AuthController extends Controller
     {
         if (!Auth::attempt($request->only('email', 'password'))) {
             return response()->json([
+                'status' => '401',
                 'message' => 'Invalid login details'
             ], 401);
         }

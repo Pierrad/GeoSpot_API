@@ -11,11 +11,16 @@ class PlaceController extends Controller
 
     public function create(Request $request): JsonResponse
     {
-        $validated = $request->validate([
+        $validated = \Illuminate\Support\Facades\Validator::make($request->all(), [
             'name' => 'required|string',
             'geolocation' => 'required|string',
             'image' => 'required|image',
         ]);
+
+        if ($validated->fails()) {
+            return response()->json(['status' => '400', 'message' => $validated->errors()], 400);
+        }
+
         $validated['image'] = $request->file('image')->store('public');
         $validated['geolocation'] = json_decode($validated['geolocation']);
         $validated['creator'] = $request->user()->id;
@@ -26,11 +31,16 @@ class PlaceController extends Controller
 
     public function update(Request $request, Place $place): JsonResponse
     {
-        $validated = $request->validate([
+        $validated = \Illuminate\Support\Facades\Validator::make($request->all(), [
             'name' => 'string',
             'geolocation' => 'string',
             'image' => 'image',
         ]);
+
+        if ($validated->fails()) {
+            return response()->json(['status' => '400', 'message' => $validated->errors()], 400);
+        }
+
         if (isset($validated['geolocation'])) {
             $validated['geolocation'] = json_decode($validated['geolocation']);
         }
@@ -54,10 +64,15 @@ class PlaceController extends Controller
 
     public function getAround(Request $request): JsonResponse
     {
-        $validated = $request->validate([
+        $validated = \Illuminate\Support\Facades\Validator::make($request->all(), [
             'geolocation' => 'required|string',
             'radius' => 'required|integer',
         ]);
+
+        if ($validated->fails()) {
+            return response()->json(['status' => '400', 'message' => $validated->errors()], 400);
+        }
+
         $validated['geolocation'] = json_decode($validated['geolocation']);
         $places = (new Place)->getAround($validated['geolocation'], $validated['radius']);
         return response()->json($places, 200);
