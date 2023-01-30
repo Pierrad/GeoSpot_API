@@ -33,7 +33,9 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     });
 
     Route::prefix('user')->group(function () {
-        Route::get('/created', [PlaceController::class, 'getCreated']);
+        Route::get('/created', [PlaceController::class, 'getAllCreated']);
+        Route::get('/created/{place}', [PlaceController::class, 'getCreated']);
         Route::get('/discovered', [DiscoveredPlaceController::class, 'getDiscovered']);
+        Route::get('/discovered/{discoveredPlace}', [DiscoveredPlaceController::class, 'getDiscoveredPlace']);
     });
 });

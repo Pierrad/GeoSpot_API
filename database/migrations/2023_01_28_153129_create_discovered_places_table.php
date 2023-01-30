@@ -14,12 +14,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('discovered_places', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('id_user');
             $table->unsignedBigInteger('id_place');
             $table->date('date');
             $table->timestamps();
-
-            $table->primary(['id_user', 'id_place']);
 
             $table->foreign('id_user')
                 ->references('id')

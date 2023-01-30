@@ -1,11 +1,11 @@
 _type: export
 __export_format: 4
-__export_date: 2023-01-29T17:00:59.013Z
+__export_date: 2023-01-30T13:11:50.633Z
 __export_source: insomnia.desktop.app:v2022.7.5
 resources:
   - _id: req_618b0adce4734d5cb77cc4462219499f
-    parentId: fld_5d3395aff2054e19a54823d8274af641
-    modified: 1674924309859
+    parentId: fld_5515e397dd5d4925961e4e7bdeb6be2d
+    modified: 1675084160540
     created: 1674923586651
     url: "{{ _.url }}/user/created"
     name: GetCreatedPlaces
@@ -28,6 +28,16 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
+  - _id: fld_5515e397dd5d4925961e4e7bdeb6be2d
+    parentId: fld_5d3395aff2054e19a54823d8274af641
+    modified: 1675084156895
+    created: 1675084156895
+    name: CreatedPlace
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1675084156895
+    _type: request_group
   - _id: fld_5d3395aff2054e19a54823d8274af641
     parentId: wrk_7197747b9a97497d9eb45d4f70b06a97
     modified: 1674922732150
@@ -46,9 +56,34 @@ resources:
     description: ""
     scope: collection
     _type: workspace
+  - _id: req_2b0764131215437e97de76b4ca3de349
+    parentId: fld_5515e397dd5d4925961e4e7bdeb6be2d
+    modified: 1675084162181
+    created: 1675084039092
+    url: "{{ _.url }}/user/created/1"
+    name: GetCreatedPlace
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - id: pair_4bc86d5b2fa44c1db9a4c9a24dd37efe
+        name: Authorization
+        value: Bearer 1|DyntgyY86wBAICi6xNEKExXlZaW72Vk8daR4w14R
+        description: ""
+    authentication: {}
+    metaSortKey: -1674923586601
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_e9341fe0245846d69e955eb485b02dda
-    parentId: fld_5d3395aff2054e19a54823d8274af641
-    modified: 1674924313694
+    parentId: fld_32c2e5c6e24d44f8ae5cec037a4ade25
+    modified: 1675084171922
     created: 1674923128460
     url: "{{ _.url }}/user/discovered"
     name: GetDiscoveredPlaces
@@ -59,7 +94,7 @@ resources:
     headers:
       - id: pair_71adf5371d914c25976214cb77d66337
         name: Authorization
-        value: Bearer 2|3GyjPMCKqjgr0mBOqbHrwCexSKx1hWpwL4uBZZSz
+        value: Bearer 20|3RHTPGfhUcA18w9oIG8GXY2xXGwnqEOqBETGjs4m
         description: ""
     authentication: {}
     metaSortKey: -1674923128460
@@ -71,9 +106,44 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
+  - _id: fld_32c2e5c6e24d44f8ae5cec037a4ade25
+    parentId: fld_5d3395aff2054e19a54823d8274af641
+    modified: 1675084189494
+    created: 1675084169582
+    name: DiscoveredPlace
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1675084156845
+    _type: request_group
+  - _id: req_8763bc06f8d84a22869735059cf8ae49
+    parentId: fld_32c2e5c6e24d44f8ae5cec037a4ade25
+    modified: 1675084173286
+    created: 1675083089351
+    url: "{{ _.url }}/user/discovered/1"
+    name: GetDiscoveredPlace
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - id: pair_3f5887b6a2944b44b9f3a6a01096a534
+        name: Authorization
+        value: Bearer 1|DyntgyY86wBAICi6xNEKExXlZaW72Vk8daR4w14R
+        description: ""
+    authentication: {}
+    metaSortKey: -1674923128410
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_67df83de410b4ed5bb33895745df1a20
     parentId: fld_7f4117b10deb416c91c7dfd129517bc6
-    modified: 1674929548386
+    modified: 1675083281071
     created: 1674921835177
     url: "{{ _.url }}/place"
     name: CreatePlace
@@ -100,7 +170,7 @@ resources:
     headers:
       - id: pair_44395ae2116640cfbd66a0d49fa813be
         name: Authorization
-        value: Bearer 1|pkLqnCmaM2MYZMr8fx71etteLfQXQGt6vIP3OxPS
+        value: Bearer 1|DyntgyY86wBAICi6xNEKExXlZaW72Vk8daR4w14R
         description: ""
       - name: Content-Type
         value: multipart/form-data
@@ -242,7 +312,7 @@ resources:
     _type: request
   - _id: req_8ad8af9b27f24350bf0bf1e6706a51dc
     parentId: fld_7f4117b10deb416c91c7dfd129517bc6
-    modified: 1674924293394
+    modified: 1675083289162
     created: 1674922985525
     url: "{{ _.url }}/place/discovered"
     name: AddDiscoveredPlace
@@ -258,7 +328,7 @@ resources:
     headers:
       - id: pair_da78aaa4cbc34e1ebb9d54e5e654ec33
         name: Authorization
-        value: Bearer 2|3GyjPMCKqjgr0mBOqbHrwCexSKx1hWpwL4uBZZSz
+        value: Bearer 1|DyntgyY86wBAICi6xNEKExXlZaW72Vk8daR4w14R
         description: ""
       - name: Content-Type
         value: application/json

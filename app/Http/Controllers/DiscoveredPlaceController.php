@@ -11,13 +11,9 @@ class DiscoveredPlaceController extends Controller
 {
     public function create(Request $request): JsonResponse
     {
-        $validated = \Illuminate\Support\Facades\Validator::make($request->all(), [
+        $validated = $request->validate([
             'id_place' => 'required|integer',
         ]);
-
-        if ($validated->fails()) {
-            return response()->json(['status' => '400', 'message' => $validated->errors()], 400);
-        }
 
         $validated['id_user'] = $request->user()->id;
         $validated['date'] = now();
@@ -31,5 +27,11 @@ class DiscoveredPlaceController extends Controller
         $places = $request->user()->discoveredPlaces()->get();
         $places->load('place');
         return response()->json($places, 200);
+    }
+
+    public function getDiscoveredPlace(Request $request, DiscoveredPlace $discoveredPlace): JsonResponse
+    {
+        $discoveredPlace->load('place');
+        return response()->json($discoveredPlace, 200);
     }
 }

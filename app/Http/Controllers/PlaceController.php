@@ -27,15 +27,11 @@ class PlaceController extends Controller
 
     public function update(Request $request, Place $place): JsonResponse
     {
-        $validated = \Illuminate\Support\Facades\Validator::make($request->all(), [
+        $validated = $request->validate([
             'name' => 'string',
             'geolocation' => 'string',
             'image' => 'image',
         ]);
-
-        if ($validated->fails()) {
-            return response()->json(['status' => '400', 'message' => $validated->errors()], 400);
-        }
 
         if (isset($validated['geolocation'])) {
             $validated['geolocation'] = json_decode($validated['geolocation']);
@@ -74,9 +70,14 @@ class PlaceController extends Controller
         return response()->json($places, 200);
     }
 
-    public function getCreated(Request $request): JsonResponse
+    public function getAllCreated(Request $request): JsonResponse
     {
         $places = $request->user()->createdPlaces()->get();
         return response()->json($places, 200);
+    }
+
+    public function getCreated(Request $request, Place $place): JsonResponse
+    {
+        return response()->json($place, 200);
     }
 }

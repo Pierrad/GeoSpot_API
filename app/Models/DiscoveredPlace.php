@@ -11,15 +11,6 @@ class DiscoveredPlace extends Model
 {
     use HasFactory;
 
-    protected function setKeysForSaveQuery($query): Builder
-    {
-        $query
-            ->where('id_user', '=', $this->getAttribute('id_user'))
-            ->where('id_place', '=', $this->getAttribute('id_place'));
-
-        return $query;
-    }
-
     /**
      * The attributes that are mass assignable.
      *
