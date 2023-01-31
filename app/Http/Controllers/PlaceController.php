@@ -56,17 +56,21 @@ class PlaceController extends Controller
 
     public function getAround(Request $request): JsonResponse
     {
-        $validated = \Illuminate\Support\Facades\Validator::make($request->all(), [
+        $validated = $request->validate([
             'geolocation' => 'required|string',
             'radius' => 'required|integer',
         ]);
 
-        if ($validated->fails()) {
-            return response()->json(['status' => '400', 'message' => $validated->errors()], 400);
-        }
-
         $validated['geolocation'] = json_decode($validated['geolocation']);
         $places = (new Place)->getAround($validated['geolocation'], $validated['radius']);
+
+        // remove the places already discovered by the user and the places created by the user
+        $places = array_filter($places, function ($place) use ($request) {
+            return !$request->user()->discoveredPlaces->contains($place) && $place->creator != $request->user()->id;
+        });
+
+        $places = array_values($places);
+
         return response()->json($places, 200);
     }
 
