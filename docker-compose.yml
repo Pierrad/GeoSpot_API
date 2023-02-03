@@ -1,7 +1,8 @@
 # For more information: https://laravel.com/docs/sail
-version: '3'
+version: '3.5'
 services:
     api:
+        hostname: webapi
         build:
             context: ./vendor/laravel/sail/runtimes/8.2
             dockerfile: Dockerfile
@@ -22,6 +23,7 @@ services:
             - '.:/var/www/html'
         networks:
             - sail
+            - geospot_web
         depends_on:
             - mysql
     mysql:
@@ -47,6 +49,9 @@ services:
 networks:
     sail:
         driver: bridge
+    geospot_web:
+        external: true
+
 volumes:
     sail-mysql:
         driver: local
