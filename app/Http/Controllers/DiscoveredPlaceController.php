@@ -29,14 +29,14 @@ class DiscoveredPlaceController extends Controller
         return response()->json($discoveredPlace, 201);
     }
 
-    public function getDiscovered(Request $request): JsonResponse
+    public function getAllDiscovered(Request $request): JsonResponse
     {
         $places = $request->user()->discoveredPlaces()->get();
         $places->load('place');
         return response()->json($places, 200);
     }
 
-    public function getDiscoveredPlace(Request $request, DiscoveredPlace $discoveredPlace): JsonResponse
+    public function getDiscovered(Request $request, DiscoveredPlace $discoveredPlace): JsonResponse
     {
         $discoveredPlace->load('place');
         return response()->json($discoveredPlace, 200);
