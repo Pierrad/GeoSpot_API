@@ -18,6 +18,13 @@ class DiscoveredPlaceController extends Controller
         $validated['id_user'] = $request->user()->id;
         $validated['date'] = now();
 
+        if (DiscoveredPlace::where('id_user', $validated['id_user'])->where('id_place', $validated['id_place'])->exists()) {
+            return response()->json([
+                'status' => '409',
+                'message' => 'Already discovered'
+            ], 409);
+        }
+
         $discoveredPlace = DiscoveredPlace::create($validated);
         return response()->json($discoveredPlace, 201);
     }

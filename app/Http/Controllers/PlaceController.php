@@ -51,6 +51,7 @@ class PlaceController extends Controller
 
     public function get(Request $request, Place $place): JsonResponse
     {
+        $place->load('creator');
         return response()->json($place, 200);
     }
 
@@ -66,7 +67,11 @@ class PlaceController extends Controller
 
         // remove the places already discovered by the user and the places created by the user
         $places = array_filter($places, function ($place) use ($request) {
-            return !$request->user()->discoveredPlaces->contains($place) && $place->creator != $request->user()->id;
+            $discoveredPlaces = $request->user()->discoveredPlaces()->get();
+            $discoveredPlaces = $discoveredPlaces->map(function ($discoveredPlace) {
+                return $discoveredPlace->id_place;
+            });
+            return !$discoveredPlaces->contains($place->id) && $place->creator != $request->user()->id;
         });
 
         $places = array_values($places);
