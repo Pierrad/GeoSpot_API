@@ -25,6 +25,14 @@ class DiscoveredPlaceController extends Controller
             ], 409);
         }
 
+        // Check if the place is created by the user
+        if (User::find($validated['id_user'])->createdPlaces()->where('id', $validated['id_place'])->exists()) {
+            return response()->json([
+                'status' => '409',
+                'message' => 'You can\'t discover your own place'
+            ], 409);
+        }
+
         $discoveredPlace = DiscoveredPlace::create($validated);
         return response()->json($discoveredPlace, 201);
     }
